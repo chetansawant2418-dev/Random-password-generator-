@@ -1,2 +1,19 @@
-# Random-password-generator-
-This program generates a random 6‑character password using letters and digits, prints it, and then asks the user to type it.
+import random
+import string
+
+def generate_pass(length):
+    char= string.ascii_letters + string.digits 
+    password = ''.join(random.choice(char)
+     for _ in range(length))
+    return password
+length=6
+capture=generate_pass(length)
+print("Generated password  : ",capture)
+
+while True:
+    cap =input("Enter following passward:")
+    if cap == capture:
+     print(" PASSWARD IS CORRECT ")
+     break
+    else:
+     print("ENTER CORRECT PASSWARD")
